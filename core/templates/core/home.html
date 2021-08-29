@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+        *{
+            margin: 0%;
+            padding:0%;
+            font-family:Nunito;
+            box-sizing:border-box;
+            background: black;
+           
+        }
+
+        .container{
+            background: transparent;
+            text-align: center;
+            padding-top: 50px;
+            border: 2px solid rgb(204, 29, 29);
+            border-radius: 7px;
+            display: inline-block;
+            margin-left: 12cm;
+            margin-top: 1cm;
+            padding: 1cm;
+            padding-left: 0.2cm;
+            padding-right: 0.2cm;
+            padding-bottom: 1.5cm;
+            
+        }
+
+        .container label{
+            font-weight: 900;
+            padding-right: 20px;
+            color:rgb(228, 209, 209);
+            font-family: Raleway;
+            font-size: 0.8cm;
+        }
+        .container input[type=text]{
+            margin-top: 1cm;
+            color:rgb(3, 0, 0);
+            font-family: Raleway;
+            font-size: large;
+            width: 50%;
+            height: 30px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+            outline: none;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            background: rgb(247, 245, 243);
+        }
+        h1{
+            font-family: Raleway;
+            font-size: 1.5cm;
+            color:rgb(255, 255, 255);
+        }
+
+        h2,h3{
+            font-family: Raleway;
+            font-size: 1cm;
+            color:rgb(255, 255, 255);
+        }
+
+        .container input[type=submit]{
+            font-family: Raleway;
+            padding: 3px;
+            border-radius: 7px;
+            font-size: medium;
+            cursor: pointer;
+            font-weight: 800;
+            color:rgb(228, 209, 209);
+            transition: 0.2s;
+        }
+        .container input[type=submit]:hover{
+            background: rgb(248, 248, 248);
+            color: rgb(14, 1, 1);
+        }
+
+        @media screen and (max-width:320px){
+
+            .container{
+                background: transparent;
+                text-align: center;
+                padding-top: 10px;
+                border: none;
+                border-radius: 7px;
+                display: inline-block;
+                width: 95%;
+                margin: 10px;
+                
+            }
+    
+            .container label{
+                font-weight: 900;
+                margin:1px;
+                color:rgb(228, 209, 209);
+                font-family: Raleway;
+                font-size: 15px;
+                display: block;
+                height: 3px;
+            }
+            .container input[type=text]{
+                margin-top: 20px;
+                color:rgb(3, 0, 0);
+                font-family: Raleway;
+                font-size: medium;
+                height: 20px;
+                display: block;
+                margin-bottom: 10px;
+                outline: none;
+                border: 2px solid rgb(255, 255, 255);
+                border-radius: 5px;
+                background: rgb(247, 245, 243);
+                
+                width: 95%;
+                
+            }
+            h1{
+                font-family: Raleway;
+                font-size: 1cm;
+                color:rgb(255, 255, 255);
+                transition: 0.5s;
+                margin: 10px;
+            }
+    
+            h2,h3{
+                font-family: Raleway;
+                font-size: 0.7cm;
+                color:rgb(255, 255, 255);
+                transition: 0.5s;
+                margin: 10px;
+            }
+    
+            .container input[type=submit]{
+                font-family: Raleway;
+                padding: 3px;
+                border-radius: 7px;
+                font-size: medium;
+                cursor: pointer;
+                font-weight: 800;
+                color:rgb(228, 209, 209);
+                transition: 0.2s;
+                margin-right: 20px;
+                margin-bottom: 40px;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main">
+        <h1>Find The Weather</h1>
+
+    <form method="GET">
+        <label>City</label>
+        <input type="text" name="city" id="city">
+        <input type="submit" value="submit">
+
+    </form>
+
+    {% if result %}
+    <h2>{{ result.region }}</h2>
+    <h3>{{ result.dayhour }}</h3>
+    <h3>{{ result.temp_now }}</h3>
+    <h3>{{ result.weather_now }}</h3>
+{% endif %}
+
+    </div>
+
+    
+    
+</body>
+</html>
